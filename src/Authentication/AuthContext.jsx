@@ -2,7 +2,7 @@
 import React, { useContext, useEffect, useState } from "react";
 
 // Firebase Import
-import {app} from "./firebase";
+import {app} from "../Firebase/firebase";
 
 // Firebase Auth Import
 import {

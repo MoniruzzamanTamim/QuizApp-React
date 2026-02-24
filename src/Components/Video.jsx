@@ -1,21 +1,21 @@
-import React from 'react'
-import image from '../assets/images/3.jpg'
-import { Link } from 'react-router-dom'
+import React from "react";
+import image from "../assets/images/3.jpg";
+import { Link } from "react-router-dom";
 
-function Video({questions}) {
-
+function Video({ id, title, noq }) {
   return (
-    
-         <div className='video'>
-           <img src={image} alt="Video Title" />
-           <p>#23 React Hooks Bangla - React useReducer hook Bangla</p>
-           <div className='qmeta'>
-             <p>{questions} Questions</p>
-             <p>Score : Not taken yet</p>
-           </div>
-         </div>
-    
-  )
+    <Link to={`/quiz/${id}`}>
+      <div className="video">
+        <img src={image} alt={title} />
+        <p>{title}</p>
+
+        <div className="qmeta">
+          <p>Total Question: {noq}</p>
+          <p>Score: {noq ? noq * 5 : 0}</p>
+        </div>
+      </div>
+    </Link>
+  );
 }
 
-export default Video
+export default Video;

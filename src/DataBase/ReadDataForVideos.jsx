@@ -3,7 +3,7 @@ import React,{useState,useEffect} from 'react'
 import {get,getDatabase,limitToFirst,orderByKey,query,ref, startAfter } from "firebase/database";
 
 
-function useReadDataForVideos(page) {
+function useReadDataForVideos(item) {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
   const [videos, setVideos] = useState([]);
@@ -13,7 +13,7 @@ function useReadDataForVideos(page) {
     async function fetchVideos() {
       const db = getDatabase();  //Connect Database
       const VideosRef = ref(db, "videos");   //Connect Database Table or Node
-      const VideoQuery = query( VideosRef,orderByKey(),startAfter("" + page),limitToFirst(8)); //Database or Node Data Query 
+      const VideoQuery = query( VideosRef,orderByKey(),startAfter("" + item),limitToFirst(8)); //Database or Node Data Query 
 
 
       // Try & catch for Error Handling 
@@ -37,9 +37,13 @@ function useReadDataForVideos(page) {
     }
   }
 
-  fetchVideos();   // শুধু এখানে call হবে
+  setTimeout(() => {
+     fetchVideos();  
+  }, 500);
 
-}, [page]);  // page change হলে run হবে
+  // fetchVideos();   // শুধু এখানে call হবে
+
+}, [item]);  // page change হলে run হবে
 
  return {loading,error,videos,hasMore}
 }

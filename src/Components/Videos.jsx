@@ -17,15 +17,11 @@ function Videos() {
       loader={<BasicLoader />}
     >
       <div className='videos'>
-        {videos.map((video) => (
-          <Video
-            key={video.youtubeID}
-            title={video.title}
-            id={video.youtubeID}
-            noq={video.noq}
-          />
-        ))}
-
+        {videos.map((video, index) => (
+          <Link to={`/quiz/${video.youtubeID}`} key={`${video.youtubeID}-${index}`}>
+            <Video title={video.title} id={video.youtubeID} noq={video.noq} />
+         </Link>
+))}
         {!loading && videos.length === 0 && <h3>Data Not Found</h3>}
         {error && <h3>Error Detected</h3>}
       </div>

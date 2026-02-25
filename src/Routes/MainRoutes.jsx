@@ -20,8 +20,8 @@ function MainRoutes() {
           <Route  path="/" element={<Home/>} />
           <Route  path="/signup" element={<PublicRoute><Signup/></PublicRoute>} />
           <Route  path="/login" element={<PublicRoute><Login/></PublicRoute>} />
-          <Route  path="/quiz" element={<PrivetRoute><Quiz/></PrivetRoute>} />
-          <Route  path="/result" element={<Result/>} />
+          <Route  path="/quiz/:id" element={<PrivetRoute><Quiz/></PrivetRoute>} />
+          <Route  path="/result/:id"  element={<Result/>} />
         </Routes>
       </Layout>
       </AuthProvider>

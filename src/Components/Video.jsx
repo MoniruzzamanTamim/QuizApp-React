@@ -4,9 +4,11 @@ import { Link } from "react-router-dom";
 
 function Video({ id, title, noq }) {
   return (
-    <Link to={`/quiz/${id}`}>
+    
       <div className="video">
-        <img src={image} alt={title} />
+        <img
+        src={`http://img.youtube.com/vi/${id}/maxresdefault.jpg`} alt={title}
+      />
         <p>{title}</p>
 
         <div className="qmeta">
@@ -14,7 +16,6 @@ function Video({ id, title, noq }) {
           <p>Score: {noq ? noq * 5 : 0}</p>
         </div>
       </div>
-    </Link>
   );
 }
 

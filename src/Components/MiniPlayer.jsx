@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import image from "../assets/images/3.jpg";
 
-function MiniPlayer() {
-  const [mini, setMini] = useState(false);
+function MiniPlayer({imageID,title}) {
+  const [mini, setMini] = useState(true);
+
+  imageID
 
   return (
     <div className={`miniPlayer ${mini ? "floatingBtn" : ""}`}>
@@ -30,8 +32,8 @@ function MiniPlayer() {
       {/* Content Only Show When Full */}
       {!mini && (
         <>
-          <img src={image} alt="Alt Tag" />
-          <p>#23 React Hooks Bangla - React useReducer hook Bangla</p>
+          <img  src={`http://img.youtube.com/vi/${imageID}/maxresdefault.jpg`} alt={title} />
+          <p>{title}</p>
         </>
       )}
     </div>

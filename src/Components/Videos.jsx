@@ -18,7 +18,7 @@ function Videos() {
     >
       <div className='videos'>
         {videos.map((video, index) => (
-          <Link to={`/quiz/${video.youtubeID}`} key={`${video.youtubeID}-${index}`}>
+          <Link to={`/quiz/${video.youtubeID}`} key={`${video.youtubeID}-${index}`}  state={{ videoTitle: video.title }}>
             <Video title={video.title} id={video.youtubeID} noq={video.noq} />
          </Link>
 ))}

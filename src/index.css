@@ -4,8 +4,8 @@
 :root {
   --bodyBackground: #f2f4f8;
   --successGreen: #00ff84;
-  --dangerRed: #ffc0c7;
-  --questionBG: #e4e8ee;
+  --dangerRed: #ff001e;
+  --questionBG: #000000;
   --fontPrimary: #002333;
   --active: #2dbf64;
 }
@@ -496,6 +496,10 @@ h4 {
 
 .answer:hover {
   background: hsla(229, 20%, 57%, 0.253);
+  
+}
+.answer:hover  span {
+ color: black;
 }
 
 .answer input {
@@ -504,6 +508,7 @@ h4 {
 
 .answer span {
   width: 100%;
+  color: #fff;
 }
 
 .answer span:nth-of-type(2) {

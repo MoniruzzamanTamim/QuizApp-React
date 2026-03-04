@@ -27,7 +27,7 @@ function Login() {
 
     try {
       await loginUser(email, password);
-      alert("Login Successful ✅");
+      // alert("Login Successful ✅");
       navigate("/");
     } catch (err) {
       setError(err.message);

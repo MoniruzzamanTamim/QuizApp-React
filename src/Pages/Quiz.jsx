@@ -8,6 +8,7 @@ import ReadDataForQuesition from '../DataBase/ReadDataForQuesition';
 import BasicLoader from '../Loader/BasicLoader';
 import { useAuth } from '../Authentication/AuthContext';
 import { getDatabase, ref, set } from "firebase/database";
+import { Link } from "react-router-dom";
 
 const initialState = [];
 
@@ -79,7 +80,7 @@ const videoTitle = location.state?.videoTitle;
       {loading && <BasicLoader />}
       {error && <h2>There was a problem...</h2>}
 
-      {!loading && !error && qna.length > 0 && (
+      {!loading && !error && qna.length > 0 ? (
         <>
           <h1>
             <span className="material-icons-outlined"> help_outline </span>
@@ -92,7 +93,7 @@ const videoTitle = location.state?.videoTitle;
               ...option,
               key: `${currentQuestion}-${idx}-${option.title}`,
             }))}
-            handleAnsChange={handleAnsChange}
+            handleAnsChange={handleAnsChange} input={true}
           />
 
           <ProgressBar
@@ -104,6 +105,20 @@ const videoTitle = location.state?.videoTitle;
 
           <MiniPlayer videoID={id} videoTitle={videoTitle} />
         </>
+      ):(
+        <>
+         <div className="notfound-container">
+      <div className="card">
+        <h1>Video Not Available</h1>
+        <p>This video is not assigned to any question yet.</p>
+
+        <button onClick={() => navigate("/")} style={{padding:'15px'}}>
+          Go Back Home
+        </button>
+      </div>
+    </div>
+        </>
+         
       )}
     </>
   );

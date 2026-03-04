@@ -7,7 +7,7 @@ import Account from "./Account";
 function Navbar() {
   return (
     <section className="navbar-section bg-black text-white">
-      <Container>
+      <Container style={{paddingTop:'12px', marginTop:'0', marginBottom:'0',paddingBottom:'12px'}}>
         <Row className="align-items-center">
         
           {/* Logo + Brand */}

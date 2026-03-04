@@ -6,7 +6,7 @@ import { useAuth } from "../Authentication/AuthContext";
 
 function Account() {
 
-    const [error, setError] = useState("");
+  const [error, setError] = useState("");
   const { currentUser, logoutUser } = useAuth();
   const navigate = useNavigate();
 
@@ -14,7 +14,7 @@ function Account() {
   const handleLogout = async () => {
     try {
       await logoutUser();
-      alert("Logout Successful ✅");
+      // alert("Logout Successful ✅");
       navigate("/login");
     } catch (error) {
       setError(error.message);

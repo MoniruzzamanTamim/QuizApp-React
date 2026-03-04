@@ -3,9 +3,9 @@ import _ from "lodash";
 import Answers from '../Components/Answers';
 import ProgressBar from '../Components/ProgressBar';
 import MiniPlayer from '../Components/MiniPlayer';
+import BasicLoader from '../Loader/BasicLoader'
 import { useParams, useNavigate, useLocation } from 'react-router-dom';
 import ReadDataForQuesition from '../DataBase/ReadDataForQuesition';
-import BasicLoader from '../Loader/BasicLoader';
 import { useAuth } from '../Authentication/AuthContext';
 import { getDatabase, ref, set } from "firebase/database";
 import { Link } from "react-router-dom";

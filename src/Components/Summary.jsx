@@ -7,13 +7,13 @@ import BasicLoader from '../Loader/BasicLoader'
 function Summary({score,noq}) {
   const getKeyword = useMemo(() => {
     if ((score / (noq * 5)) * 100 < 50) {
-      return "failed";
+      return "sad";
     } else if ((score / (noq * 5)) * 100 < 75) {
-      return "good";
+      return "happy";
     } else if ((score / (noq * 5)) * 100 < 100) {
-      return "very good";
+      return "success";
     } else {
-      return "excellent";
+      return "celebration";
     }
   }, [score, noq]);
 
@@ -21,7 +21,7 @@ function Summary({score,noq}) {
     `https://api.pexels.com/v1/search?query=${getKeyword}&per_page=1`,
     "GET",
     {
-      Authorization:import.meta.env.VITE_PEXELS_API_KEY,
+      Authorization: import.meta.env.VITE_PEXELS_API_KEY,
     }
   );
 

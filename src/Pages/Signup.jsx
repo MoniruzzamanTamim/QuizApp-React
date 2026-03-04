@@ -3,7 +3,8 @@ import React, { useState } from "react";
 import Illustration from "../Components/Illustration";
 import Form from "../Components/Form";
 import TextInput from "../Components/TextInput";
-import Checkbox from "../Components/Checkbox";
+import Checkbox from "../Components/CheckBox";
+
 import Button from "../Components/Button";
 
 import { Link, useNavigate } from "react-router-dom";
